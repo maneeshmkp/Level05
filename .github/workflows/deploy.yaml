@@ -18,7 +18,10 @@ jobs:
             key: ${{ secrets.SSH_KEY }} 
             script: |
                 cd ~/Level05
-                git pull
+                git fetch origin
+                git checkout main
+                git pull origin main
+                
                 sudo docker compose down
                 sudo docker compose up -d --build
 
